@@ -1,0 +1,24 @@
+{
+  "name": "mobile-test-automation-codeceptjs-appium",
+  "version": "1.0.0",
+  "description": "Projeto de Teste Automatizado ",
+  "main": "index.js",
+  "dependencies": {
+    "codeceptjs": "^3.0.0",
+    "webdriverio": "^6.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathaliacamara/Mobile-Test-Automation-CodeceptJS-Appium.git"
+  },
+  "author": "Nathalia Câmara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nathaliacamara/Mobile-Test-Automation-CodeceptJS-Appium/issues"
+  },
+  "homepage": "https://github.com/nathaliacamara/Mobile-Test-Automation-CodeceptJS-Appium#readme"
+}
