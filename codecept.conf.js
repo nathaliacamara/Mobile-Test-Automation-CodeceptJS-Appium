@@ -5,12 +5,12 @@ const { setHeadlessWhen } = require('@codeceptjs/configure');
 setHeadlessWhen(process.env.HEADLESS);
 
 exports.config = {
-  tests: './*_test.js',
+  tests: './steps/*_test.js',
   output: './output',
   helpers: {
     Appium: {
       platform: 'Android',
-      app: 'C:\\Users\\n.camara.silva\\Documents\\GitHub\\Mobile-Test-Automation-CodeceptJS-Appium\\app-release.apk',
+      app: 'C:\\Users\\Fusion\\Documents\\Qazando\\App\\app-release.apk',
       desiredCapabilities:{
         appPackage:"com.qazandoapp",
         appActivity:"MainActivity",
@@ -20,9 +20,12 @@ exports.config = {
     }
   },
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
+    login_page: './pages/login_page.js',
+    home_page: './pages/home_page.js'
   },
-  bootstrap: null,
+  bootstrap: './server.js',
+  teardown:'./server.js',
   mocha: {},
   name: 'Mobile-Test-Automation-CodeceptJS-Appium',
   plugins: {
