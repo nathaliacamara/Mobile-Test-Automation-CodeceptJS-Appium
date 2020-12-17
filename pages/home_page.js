@@ -8,6 +8,8 @@ module.exports = {
    
   },
 
+
+
  // metodo  que valida sucesso do login
   checkLoginSuccess(){
 

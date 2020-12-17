@@ -5,11 +5,14 @@
   "main": "index.js",
   "dependencies": {
     "codeceptjs": "^3.0.1",
+    "mochawesome": "^6.2.1",
     "webdriverio": "^6.7.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^8.2.1"
+  },
   "scripts": {
-     "test": "mocha"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",

@@ -1,21 +1,14 @@
-const { setHeadlessWhen } = require('@codeceptjs/configure');
-
-// turn on headless mode when running with HEADLESS=true environment variable
-// export HEADLESS=true && npx codeceptjs run
-setHeadlessWhen(process.env.HEADLESS);
-
 exports.config = {
-  tests: './steps/*_test.js',
   output: './output',
   helpers: {
     Appium: {
       platform: 'Android',
       app: 'C:\\Users\\Fusion\\Documents\\Qazando\\App\\app-release.apk',
-      desiredCapabilities:{
-        appPackage:"com.qazandoapp",
-        appActivity:"MainActivity",
-        deviceName:"pixel",
-        plataformVersion:"9"
+      desiredCapabilities: {
+        appPackage: 'com.qazandoapp',
+        appActivity: 'MainActivity',
+        deviceName: 'pixel',
+        plataformVersion: '9'
       }
     }
   },
@@ -24,20 +17,26 @@ exports.config = {
     login_page: './pages/login_page.js',
     home_page: './pages/home_page.js'
   },
-  bootstrap: './server.js',
-  teardown:'./server.js',
   mocha: {},
-  name: 'Mobile-Test-Automation-CodeceptJS-Appium',
+  bootstrap: './server.js',
+  teardown: './server.js',
+  hooks: [],
+  gherkin: {
+    features: './features/*.feature',
+    steps: ['./step_definitions/steps.js']
+  },
   plugins: {
+    screenshotOnFail: {
+      enabled: true
+    },
     pauseOnFail: {},
     retryFailedStep: {
       enabled: true
     },
     tryTo: {
       enabled: true
-    },
-    screenshotOnFail: {
-      enabled: true
     }
-  }
+  },
+  //tests: './steps/*_test.js',
+  name: 'Mobile-Test-Automation-CodeceptJS-Appium'
 }
